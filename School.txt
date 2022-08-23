@@ -1,0 +1,137 @@
+package schoolmanagement;
+
+public class Student {
+	private int id;
+	private String sname;
+	private String saddress;
+	private int feespaid;
+	private int feestotal;
+	public Student()
+	{
+		
+	}
+	public Student(int id, String sname, String saddress, int feespaid, int feestotal) {
+		super();
+		this.id = id;
+		this.sname = sname;
+		this.saddress = saddress;
+		this.feespaid = feespaid;
+		this.feestotal = feestotal;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public String getSaddress() {
+		return saddress;
+	}
+	public void setSaddress(String saddress) {
+		this.saddress = saddress;
+	}
+	public int getFeespaid() {
+		return feespaid;
+	}
+	public void setFeespaid(int feespaid) {
+		this.feespaid = feespaid;
+	}
+	public int getFeestotal() {
+		return feestotal;
+	}
+	public void setFeestotal(int feestotal) {
+		this.feestotal = feestotal;
+	}
+	public double getremaingfees()
+	{
+		return feestotal-feespaid;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", sname=" + sname + ", saddress=" + saddress + ", feespaid=" + feespaid
+				+ ", feestotal=" + feestotal + ", Remaingfees="+ getremaingfees()+ "]";
+	}	
+}
+
+package schoolmanagement;
+
+import java.util.ArrayList;
+
+public class StudentAddData {
+	public void addData()
+	{
+		System.out.println("=========Student===========");
+		Student s1=new Student(101,"Rani","Pondy",250,5000);
+		Student s2=new Student(102,"Jackline","Gingee",350,7000);
+		Student s3=new Student(103,"Aron","Pondy",140,3000);
+		ArrayList<Student> list=new ArrayList<Student>();
+		list.add(s1);
+		list.add(s2);
+		list.add(s3);
+		for(Student s:list)
+		{
+			System.out.println(s);
+		}			
+	}
+	public void deleteData()
+	{
+		Student s1=new Student(101,"Rani","Pondy",250,5000);
+		ArrayList<Student> list=new ArrayList<Student>();
+		System.out.println(list);
+	}
+	public void exit()
+	{
+		System.out.println("exit");
+	}
+}
+
+package schoolmanagement;
+
+public class Teacher extends Student{
+	private int id;
+	private String tname;
+	private int salary;
+	public Teacher()
+	{
+		
+	}
+	public Teacher(int id, String tname, int salary) {
+		super();
+		this.id = id;
+		this.tname = tname;
+		this.salary = salary;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTname() {
+		return tname;
+	}
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	double annualsalary()
+	{
+		return salary*12;
+	}
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", tname=" + tname + ", salary=" + salary + ", Annualsalary="+ annualsalary()+ "]";
+	}
+
+}
